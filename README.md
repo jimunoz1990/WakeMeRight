@@ -1,2 +1,2 @@
 # WakeMeRight
-Alarm clock with special features
+Alarm clock with motivational quotes to help you start the day!
