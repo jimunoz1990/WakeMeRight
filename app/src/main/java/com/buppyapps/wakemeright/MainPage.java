@@ -12,12 +12,15 @@ import android.view.MenuItem;
 
 public class MainPage extends AppCompatActivity {
 
+    private Speaker speaker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        speaker = new Speaker(getApplicationContext());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -43,8 +46,8 @@ public class MainPage extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            speaker.speak("The best preparation for tomorrow is doing your best today");
             Log.d("JM", "settings was clicked!");
             return true;
         }
